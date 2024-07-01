@@ -14,7 +14,6 @@ app.get('/api/hello', async (req,res)=>{
 
     const visitor = req.query.visitor_name
     let client_ip = req.headers['cf-connecting-ip']||req.headers['x-real-ip']||req.headers['x-forwarded-for']||req.socket.remoteAddress
-    res.json({client_ip})
     const api_key = config.get("api_key")
     const url = 'https://apiip.net/api/check?ip='+client_ip +'&accessKey='+ api_key
     const response = await axios.get(url)
