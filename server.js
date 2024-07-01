@@ -13,9 +13,10 @@ app.listen(PORT,()=>{
 app.get('/api/hello', async (req,res)=>{
 
     const visitor = req.query.visitor_name
-    let client_ip = req.ip
+    let client_ip = req.ip||req.headers['x-forwarded-for']
+    console.log(client_ip)
     const api_key = config.get("api_key")
-    const url = 'https://apiip.net/api/check?ip= 102.216.200.242' +'&accessKey='+ api_key
+    const url = 'https://apiip.net/api/check?ip='+client_ip +'&accessKey='+ api_key
     const response = await axios.get(url)
     const result = response.data
     const location = result.city
