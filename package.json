@@ -1,0 +1,22 @@
+{
+  "name": "hng11_proj1",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "config": "^3.3.12",
+    "express": "^4.19.2",
+    "ip": "^2.0.1",
+    "nodemon": "^3.1.4",
+    "public-ip": "^6.0.2",
+    "request-ip": "^3.3.0"
+  }
+}
